@@ -1,0 +1,80 @@
+:root {
+  --fondo: #161a23;
+  --fondo-navbar: #1e2430;
+  --bordes: 1.3px, solid, #2d3545;
+  --letras: #8b94a8;
+  font-size: 17px;
+  font-weight: 800;
+}
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background: var(--fondo);
+  color: #ffff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.barra-lateral {
+  display: flex;
+  width: 20vh;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--fondo-navbar);
+  border: var(--bordes);
+}
+.nav {
+  height: 100%;
+  width: 20vh;
+  margin: 20px 0px;
+}
+
+.ul-nav {
+  height: 100%;
+  width: 100%;
+  gap: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-buttom {
+  height: 70%;
+  width: 100%;
+  gap: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.ul-nav li {
+  list-style: none;
+  width: 100px;
+}
+
+.ul-nav a {
+  color: var(--letras);
+  text-decoration: none;
+  transition: 2s;
+}
+
+.ul-nav li ::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 18px;
+  border-bottom: 2px solid #2d3545;
+}
+.ul-nav li :hover:before {
+  width: 75%;
+  transition: 1.5s;
+}
+
+.span-navbar {
+  width: 100%;
+  height: 2px;
+  border: var(--bordes);
+}
