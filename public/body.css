@@ -1,10 +1,39 @@
 :root {
-  --fondo: #161a23;
-  --fondo-navbar: #1e2430;
-  --bordes: 1.3px, solid, #2d3545;
-  --letras: #8b94a8;
+  --fondo-body: #161a23;
+  --borde-navbar-central: 1.3px solid #2d3545;
+  --fondo-navbar-central: rgba(30, 36, 48, 0.6);
+
+  /*Variables de elementos navbar*/
+  --letras-navbar: #8b94a8;
   font-size: 17px;
-  font-weight: 800;
+  letter-spacing: 0.9px;
+  font-size: 15px;
+  letter-spacing: 0.9px;
+
+  /*Variables de los elementos dentro header*/
+  --barra-busqueda-fondo: transparent;
+  --fondo-elementos-header: #3e4d6b;
+  --color-elementos-header: #0f141f;
+  --bordes-header: 1.3px solid #fff;
+  --bordes-radios-header: 8px;
+  --heigh-elementos-header: 50%;
+  --width-elementos-header: 60%;
+  --padding-elementos-header: 8px;
+
+  /*Variables targetas*/
+  --fondo-targeta: #161a23;
+  --borde-targeta: 1.3px solid #fff;
+  --border-radios-targeta: 8px;
+
+  /*Variables de modal*/
+  --fondo-modal: #161a23;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }
 * {
   padding: 0%;
@@ -12,23 +41,35 @@
 }
 
 body {
-  background: var(--fondo);
-  color: #ffff;
-  font-family: "Times New Roman", Times, serif;
+  background: var(--fondo-body);
 }
 
+/*=====index.php=====*/
+/*---barra-lateral---*/
 .barra-lateral {
   display: flex;
-  width: 20vh;
+  min-height: 100vh;
+}
+/*---contenido-principal---*/
+.contenido-principal {
+  flex: 1;
+  margin-left: 25vh;
+}
+
+/*=====navbar.php=====*/
+
+.div-navbar {
+  width: 25vh;
   height: 100vh;
   position: fixed;
-  background-color: var(--fondo-navbar);
-  border: var(--bordes);
+  background-color: var(--fondo-navbar-central);
+  border: var(--borde-navbar-central);
+  border-radius: 8px;
 }
 .nav {
+  margin: 15px 0px;
+  width: 100%;
   height: 100%;
-  width: 20vh;
-  margin: 20px 0px;
 }
 
 .ul-nav {
@@ -51,13 +92,11 @@ body {
 }
 
 .ul-nav li {
-  list-style: none;
   width: 100px;
 }
 
 .ul-nav a {
-  color: var(--letras);
-  text-decoration: none;
+  color: var(--letras-navbar);
   transition: 2s;
 }
 
@@ -66,7 +105,7 @@ body {
   position: absolute;
   width: 0%;
   height: 18px;
-  border-bottom: 2px solid #2d3545;
+  border-bottom: 2px solid var(--letras-navbar);
 }
 .ul-nav li :hover:before {
   width: 75%;
@@ -76,5 +115,120 @@ body {
 .span-navbar {
   width: 100%;
   height: 2px;
-  border: var(--bordes);
+  border: var(--borde-navbar-central);
+}
+
+/*=====contenido-principal-modulos=====*/
+
+.header {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  padding-left: 15px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.barra-busqueda {
+  height: var(--heigh-elementos-header);
+  width: var(--width-elementos-header);
+  background-color: var(--barra-busqueda-fondo);
+  border: var(--bordes-header);
+  border-radius: var(--bordes-radios-header);
+  padding: var(--padding-elementos-header);
+}
+.btn-select {
+  background-color: var(--fondo-elementos-header);
+  border: var(--bordes-header);
+  border-radius: var(--bordes-radios-header);
+  color: var(--color-elementos-header);
+  height: var(--heigh-elementos-header);
+  padding: var(--padding-elementos-header);
+}
+.btn-buscar,
+.btn-agregar {
+  background-color: var(--fondo-elementos-header);
+  border: var(--bordes-header);
+  color: var(--color-elementos-header);
+  border-radius: var(--bordes-radios-header);
+  height: var(--heigh-elementos-header);
+  width: max-content;
+  padding: var(--padding-elementos-header);
+}
+.btn-agregar {
+  margin: 0px 0px 0px 10%;
+}
+
+.btn-buscar,
+.btn-agregar,
+.btn-select:hover {
+  cursor: pointer;
+}
+
+.modal,
+.contenido-central {
+  border: var(--borde-navbar-central);
+  border-radius: var(--bordes-radios-header);
+  height: 100%;
+  margin: 5px 15px 0px 15px;
+}
+
+/*=============================================MODULOS=============================================*/
+/*=====inventario.php=====*/
+/*---targetas de productos---*/
+.target {
+  background-color: var(--fondo-targeta);
+  border: var(--borde-targeta);
+  border-radius: var(--border-radios-targeta);
+  height: 35%;
+  width: 20%;
+  margin: 1.5%;
+}
+/*---modal---*/
+.modal {
+  margin: 0% 20%;
+  padding: 10px;
+  position: fixed;
+  height: 80vh;
+  width: 80vh;
+  background-color: var(--fondo-modal);
+}
+
+.btn-cerrar-modal {
+  display: flex;
+  justify-content: end;
+  font-size: 16px;
+  height: 3vh;
+}
+.btn-cerrar-modal img {
+  cursor: pointer;
+  color: #fff;
+}
+.formulario {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form2 {
+  width: 100%;
+  height: 35%;
+  display: flex;
+}
+
+.display-grid{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+}
+.input-text{
+  height: 40px;
+  width: 100%;
+}
+
+.form3{
+  height: 65%;
+  width: 100%;
+  box-sizing: border-box;
 }

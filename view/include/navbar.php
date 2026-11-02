@@ -4,7 +4,7 @@ $modulo = $_GET['modulo'] ?? 'dashboard';
 <div class="div-navbar">
     <nav class="nav">
         <ul class="ul-nav">
-            <li><a href="?modulo=dashboard">Dashboard</a></li>
+            <li><a href="?modulo=dashboard" >Dashboard</a></li>
             <li><a href="?modulo=inventario">Inventario</a></li>
             <li><a href="?modulo=entrada">Entrada</a></li>
             <li><a href="?modulo=venta">Venta</a></li>
