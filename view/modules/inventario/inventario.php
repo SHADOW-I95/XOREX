@@ -14,8 +14,8 @@ include __DIR__ . '/../../../config/conexion.php';
 </div>
 
 <div class="modal">
-    <span data-cerrar-modal class="btn-cerrar-modal"><img src="../view/assets/img/cruz.png"></span>
     <form action="modal/agregar.php" class="formulario">
+     <span data-cerrar-modal class="btn-cerrar-modal"><img src="../view/assets/img/cruz.png"></span>
         <div class="form2">
             <input type="file" class="input-img">
             <div class="display-grid">
