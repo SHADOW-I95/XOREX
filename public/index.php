@@ -11,9 +11,10 @@
     <title>XOREX</title>
 </head>
 <body>
-
-<div class="barra-lateral">
+<div class="index">
+    <div class="barra-lateral">
     <?php include __DIR__.'/../view/include/navbar.php';?>
+    </div>
     <main class="contenido-principal">
         <?php 
         $modulo = $_GET['modulo'] ?? 'dashboard';
@@ -41,6 +42,6 @@
 
 
 
-    <script src="../view/include/assets/js/index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

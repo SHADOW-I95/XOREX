@@ -13,9 +13,9 @@ include __DIR__ . '/../../../config/conexion.php';
     <button class="btn-agregar"> Agregar producto</button>
 </div>
 
-<div class="modal">
-    <form action="modal/agregar.php" class="formulario">
-     <span data-cerrar-modal class="btn-cerrar-modal"><img src="../view/assets/img/cruz.png"></span>
+<div class="modal-container" id="modal">
+    <form action="modal/agregar.php" class="modal">
+        <span data-cerrar-modal class="btn-cerrar-modal"><img src="../view/assets/img/cruz.png"></span>
         <div class="form2">
             <input type="file" class="input-img">
             <div class="display-grid">
@@ -36,4 +36,4 @@ include __DIR__ . '/../../../config/conexion.php';
     <div class="target">
 
     </div>
-</div>
+</div> 
