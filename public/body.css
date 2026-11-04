@@ -1,7 +1,7 @@
 :root {
   --fondo-body: #161a23;
   --borde-navbar-central: 1.3px solid #2d3545;
-  --fondo-navbar-central: rgba(30, 36, 48, 0.6);
+  --fondo-navbar-central-modal: #212837;
 
   /*Variables de elementos navbar*/
   --letras-navbar: #8b94a8;
@@ -11,7 +11,7 @@
   letter-spacing: 0.9px;
 
   /*Variables de los elementos dentro header*/
-   --barra-busqueda-fondo: transparent;
+  --barra-busqueda-fondo: transparent;
   --fondo-elementos-header: #3e4d6b;
   --color-elementos-header: #0f141f;
   --bordes-header: 1.3px solid #fff;
@@ -24,11 +24,6 @@
   --fondo-targeta: #161a23;
   --borde-targeta: 1.3px solid #fff;
   --border-radios-targeta: 8px;
-
-  /*Variables de modal*/
-  --fondo-modal: #161a23;
-
-
 }
 
 a {
@@ -68,7 +63,7 @@ body {
   height: 100vh;
   position: fixed;
   z-index: 1;
-  background-color: var(--fondo-navbar-central);
+  background-color: var(--fondo-navbar-central-modal);
   border: var(--borde-navbar-central);
   border-radius: 8px;
 }
@@ -174,7 +169,7 @@ body {
 .contenido-central {
   border: var(--borde-navbar-central);
   border-radius: var(--bordes-radios-header);
-  background-color: var(--fondo-navbar-central);
+  background-color: var(--fondo-navbar-central-modal);
   height: 100%;
   margin: 5px 15px 0px 15px;
 }
@@ -204,12 +199,16 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(12, 12, 45, 0.6);
+  display: none;
 }
-
+.modal-container.activo {
+  display: flex;
+}
 .modal {
-background-color: #ffff;
-width: 40%;
-height: 80%;
+  background-color: var(--fondo-navbar-central-modal);
+  width: 40%;
+  height: 80%;
+  padding: 10px;
 }
 
 .btn-cerrar-modal {
