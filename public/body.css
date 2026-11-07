@@ -1,44 +1,60 @@
 :root {
-  --fondo-body: #161a23;
-  --borde-navbar-central: 1.3px solid #2d3545;
-  --fondo-navbar-central-modal: #212837;
+  --fondo: #f4f6fb;
+  --texto: #1e293b;
+  --sahdow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
 
-  /*Variables de elementos navbar*/
-  --letras-navbar: #8b94a8;
-  font-size: 17px;
-  letter-spacing: 0.9px;
-  font-size: 15px;
+  --navbar-baground: #1d2b47;
+  --navbar-border: 1.3px solid #e2e8f0;
+  --navbar-letras: #cdd6e4;
   letter-spacing: 0.9px;
 
-  /*Variables de los elementos dentro header*/
-  --barra-busqueda-fondo: transparent;
-  --fondo-elementos-header: #3e4d6b;
-  --color-elementos-header: #0f141f;
-  --bordes-header: 1.3px solid #fff;
-  --bordes-radios-header: 8px;
-  --heigh-elementos-header: 50%;
-  --width-elementos-header: 60%;
-  --padding-elementos-header: 8px;
+  --header-fondo: #ffffff;
+  --header-letras: #1e293b;
+  --bordes-header: 1.3px solid #1e293b;
+  --header-baground-elementos: #f4f6fb;
+  --header-border-radius: 10px;
+  --header-heigh-elementos: 50%;
+  --header-width-elementos: 60%;
+  --header-padding-elementos: 8px;
 
-  /*Variables targetas*/
-  --fondo-targeta: #161a23;
-  --borde-targeta: 1.3px solid #fff;
-  --border-radios-targeta: 8px;
+  --main-baground: #ffffff;
+  --main-borde: 1.3px solid transparent;
+  --main-border-radius: 10px;
+
+  --cards-fondo: #161a23;
+  --cards-borde: 1.3px solid #fff;
+  --card-borde-radius: 8px;
+
+  --modal-baground: #ffffff;
+  --modal-shadow: rgba(15, 23, 42, 0.5);
 }
 
-a {
-  text-decoration: none;
-}
-li {
-  list-style: none;
+input[type="file"] {
+  display: none;
 }
 * {
-  padding: 0%;
-  margin: 0%;
+  box-sizing: border-box;
+  margin: 0;
+}
+ul,
+a {
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
 }
 
 body {
-  background: var(--fondo-body);
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.92em;
 }
 
 /*=====index.php=====*/
@@ -63,8 +79,9 @@ body {
   height: 100vh;
   position: fixed;
   z-index: 1;
-  background-color: var(--fondo-navbar-central-modal);
-  border: var(--borde-navbar-central);
+  background-color: var(--navbar-baground);
+  border: var(--navbar-border);
+  box-shadow: var(--sahdow);
   border-radius: 8px;
 }
 .nav {
@@ -97,7 +114,7 @@ body {
 }
 
 .ul-nav a {
-  color: var(--letras-navbar);
+  color: var(--navbar-letras);
   transition: 2s;
 }
 
@@ -106,7 +123,7 @@ body {
   position: absolute;
   width: 0%;
   height: 18px;
-  border-bottom: 2px solid var(--letras-navbar);
+  border-bottom: 2px solid var(--navbar-letras);
 }
 .ul-nav li :hover:before {
   width: 75%;
@@ -116,7 +133,7 @@ body {
 .span-navbar {
   width: 100%;
   height: 2px;
-  border: var(--borde-navbar-central);
+  border: var(--navbar-border);
 }
 
 /*=====contenido-principal-modulos=====*/
@@ -124,40 +141,47 @@ body {
 .header {
   display: flex;
   height: 10%;
-  width: 100%;
+  width: 97.8%;
   align-items: center;
-  padding-left: 15px;
-  gap: 10px;
+  justify-content: center;
+  margin-left: 1.2%;
+  gap:10px ;
   box-sizing: border-box;
+  background-color: var(--header-fondo);
+  border-radius: var(--header-border-radius);
+}
+.div-header {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  gap: 16px;
+  align-items: center;
 }
 .barra-busqueda {
-  height: var(--heigh-elementos-header);
-  width: var(--width-elementos-header);
-  background-color: var(--barra-busqueda-fondo);
+  height: var(--header-heigh-elementos);
+  width: var(--header-width-elementos);
+  background-color: transparent;
   border: var(--bordes-header);
-  border-radius: var(--bordes-radios-header);
-  padding: var(--padding-elementos-header);
+  border-radius: var(--header-border-radius);
+  padding: var(--header-padding-elementos);
 }
 .btn-select {
-  background-color: var(--fondo-elementos-header);
+  background-color: var(--header-baground-elementos);
   border: var(--bordes-header);
-  border-radius: var(--bordes-radios-header);
+  border-radius: var(--header-border-radius);
   color: var(--color-elementos-header);
-  height: var(--heigh-elementos-header);
-  padding: var(--padding-elementos-header);
+  height: var(--header-heigh-elementos);
+  padding: var(--header-padding-elementos);
 }
 .btn-buscar,
 .btn-agregar {
-  background-color: var(--fondo-elementos-header);
+  background-color: var(--header-baground-elementos);
   border: var(--bordes-header);
   color: var(--color-elementos-header);
-  border-radius: var(--bordes-radios-header);
-  height: var(--heigh-elementos-header);
+  border-radius: var(--header-border-radius);
+  height: var(--header-heigh-elementos);
   width: max-content;
-  padding: var(--padding-elementos-header);
-}
-.btn-agregar {
-  margin: 0px 0px 0px 10%;
+  padding: var(--header-padding-elementos);
 }
 
 .btn-buscar,
@@ -167,9 +191,10 @@ body {
 }
 
 .contenido-central {
-  border: var(--borde-navbar-central);
-  border-radius: var(--bordes-radios-header);
-  background-color: var(--fondo-navbar-central-modal);
+  border: var(--main-borde);
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-baground);
+  box-shadow: var(--sahdow);
   height: 100%;
   margin: 5px 15px 0px 15px;
 }
@@ -178,9 +203,9 @@ body {
 /*=====inventario.php=====*/
 /*---targetas de productos---*/
 .target {
-  background-color: var(--fondo-targeta);
-  border: var(--borde-targeta);
-  border-radius: var(--border-radios-targeta);
+  background-color: var(--cards-fondo);
+  border: var(--cards-bord);
+  border-radius: var(--card-borde-radius);
   height: 35%;
   width: 20%;
   margin: 1.5%;
@@ -198,16 +223,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(12, 12, 45, 0.6);
+  background: var(--modal-shadow);
   display: none;
 }
 .modal-container.activo {
   display: flex;
 }
 .modal {
-  background-color: var(--fondo-navbar-central-modal);
+  background-color: var(--modal-baground);
   width: 40%;
-  height: 80%;
+  height: 65%;
   padding: 10px;
 }
 
@@ -220,4 +245,29 @@ body {
 .btn-cerrar-modal img {
   cursor: pointer;
   color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-img {
+  height: 40%;
+  border: var(--bordes-header);
+  border-radius: var(--header-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b3b92;
+  font-weight: 700;
+  font-size: 90%;
 }
